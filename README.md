@@ -1,6 +1,6 @@
 # Extractions GéoNature
 
-L'utilisation du package extrac$onsGeoNature nécessite l'installation de R et de RStudio : 
+L'utilisation du package extractionsGeoNature nécessite l'installation de R et de RStudio : 
 
 R : https://cran.rstudio.com/
 
@@ -8,7 +8,7 @@ RStudio : https://posit.co/download/rstudio-desktop/
 
 Il est ensuite possible de créer une copie du script R déjà présent dans le dossier "~BDD/EXPORT_DONNEES/SCRIPT_EXPORT" et de le lancer.
 
-Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à par$r de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
+Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à partir de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
 Après la décompression du fichier .zip, un script R doit être créé, sans oublier de charger le package :
 
 library(extractionsGeoNature)
@@ -32,7 +32,7 @@ Si plusieurs synthèses GeoNature sont présentes dans le même dossier, c’est
 import()
 
 
-- Import avec modificayion du chemin d'accès
+- Import avec modification du chemin d'accès
 
 import(path = '~/Documents')
 
@@ -89,7 +89,7 @@ Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké
 
 Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
 
-Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '/Documents' ou '/Downloads', comme pour la fonction 'import'.
+Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '~/Documents', comme pour la fonction 'import'.
 
 ### Exemples
 - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
