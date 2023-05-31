@@ -15,7 +15,7 @@ La fonction import permet d’importer les fichiers nécessaires à l’extrac$o
 
 ### Marche à suivre
 1. Télécharger la synthèse en .csv sur GeoNature
-2. Mettre le csv dans le même dossier que le script R utilisé ou spécifier le dossier dans lequel les fichiers sont présents dans l’argument 'path', le chemin devant être sous la forme "~/Downloads». Dans tous les cas, le fichier synthese_observa$ons de GeoNature et TaxRef doivent être dans le même dossier.
+2. Mettre le csv dans le même dossier que le script R utilisé ou spécifier le dossier dans lequel les fichiers sont présents dans l’argument 'path', le chemin devant être sous la forme '~/Downloads'. Dans tous les cas, le fichier synthese_observa$ons de GeoNature et TaxRef doivent être dans le même dossier.
 
 Par défaut, si l’argument 'path' n’est pas précisé, les fichiers seront cherchés dans le même dossier que le script R.
 
@@ -43,7 +43,7 @@ La fonction extract permet d’extraire les colonnes d’intérêt, contenues da
 
 Si une seule colonne est sélectionnée, la fonc$on s’écrit sous la forme extract(col = "plante").
 
-Dans le cas où plusieurs colonnes sont sélectionnées, la fonction prend la forme extract(col = c("plante", "caste", "annee_determina$on")) par exemple, c() permettant de combiner des valeurs.
+Dans le cas où plusieurs colonnes sont sélectionnées, la fonction prend la forme extract(col = c("plante", "caste", "annee_determination")) par exemple, c() permettant de combiner des valeurs.
 
 Par défaut, si l’argument "col" n’est pas précisé, toutes les colonnes sont sélectionnées.
 
@@ -51,9 +51,9 @@ Par défaut, si l’argument "col" n’est pas précisé, toutes les colonnes so
 
 Par défaut, toutes les observa$ons sont conservées et aucun tri n’est effectué.
   
-La fonction extract peut simplement s’écrire extract(), dans ce cas toutes les colonnes utiles des champs addi$onnels seront extraites et toutes les données de plantes seront gardées (même les observations NA ou les données ne renvoyant pas à un cd_nom dans TaxRef).
+La fonction extract peut simplement s’écrire extract(), dans ce cas toutes les colonnes utiles des champs additionnels seront extraites et toutes les données de plantes seront gardées (même les observations NA ou les données ne renvoyant pas à un cd_nom dans TaxRef).
 
-Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observa$ons
+Il faut compter environ 2 minutes d’attente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observa$ons
 
 ### Exemples
 Extraction par défaut (toutes les colonnes des champs addi$onnels et sans mise en place d'un filtre sur la précision taxonomique)
@@ -74,7 +74,7 @@ Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké
 
 Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
 
-Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme «~/Documents» ou «~/Downloads», comme pour la fonc$on 'import'.
+Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '~/Documents' ou '~/Downloads', comme pour la fonction 'import'.
 
 ### Exemples
 Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
