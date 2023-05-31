@@ -89,7 +89,7 @@ Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké
 
 Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
 
-Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '/Documents' ou '/Downloads', comme pour la fonc$on 'import'.
+Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '/Documents' ou '/Downloads', comme pour la fonction 'import'.
 
 ### Exemples
 - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
