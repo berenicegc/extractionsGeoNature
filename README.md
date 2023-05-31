@@ -24,7 +24,7 @@ Par défaut, si l’argument 'path' n’est pas précisé, les fichiers seront c
 
 Si plusieurs synthèses GeoNature sont présentes dans le même dossier, c’est le fichier le plus récent (téléchargé en dernier) qui sera importé, pour éviter l’ouverture de tous les fichiers en simultané et donc potentiellement la présence de doublons.
 
-3. Préciser le nom des fichiers s’ils ont été changés avec les arguments 'geonature' et 'taxref'. Si les noms des fichiers n’ont pas été modifiés il n’est pas nécessaire de préciser ces arguments et les noms par défaut des fichiers téléchargés seront pris en compte. Attention, les noms de fichiers ne doivent pas contenir d'accents ou de caractères spéciaux. Le nom des fichiers peut être écrit avec ou sans l’extension (.csv), toutefois les fichiers doivent obligatoirement être des .csv (et non des .xls ou .xlsx). Si l’import ne marche pas, relancer la fonc$on peut fonctionner.
+3. Préciser le nom des fichiers s’ils ont été changés avec les arguments 'geonature' et 'taxref'. Si les noms des fichiers n’ont pas été modifiés il n’est pas nécessaire de préciser ces arguments et les noms par défaut des fichiers téléchargés seront pris en compte. Attention, les noms de fichiers ne doivent pas contenir d'accents ou de caractères spéciaux. Le nom des fichiers peut être écrit avec ou sans l’extension (.csv), toutefois les fichiers doivent obligatoirement être des .csv (et non des .xls ou .xlsx). Si l’import ne marche pas, relancer la fonction peut fonctionner.
 
 ### Exemples
 - Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
@@ -48,7 +48,7 @@ import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv")
 La fonction extract permet d’extraire les colonnes d’intérêt, contenues dans les champs additionnels de la synthèse GéoNature. Les colonnes peuvent être : plante, caste, station, année de détermination et méthode de capture. Un tri des données de plantes pourra également être réalisé dans la fonction.
 
 ### Marche à suivre
-1. Sélectionner les colonnes à extraire (plante, caste, sta$on, annee_determina$on, methode) à l’aide de l’argument 'col.' Il est possible de ne sélectionner qu’une colonne ou plusieurs, l’ordre n’ayant pas d’importance.
+1. Sélectionner les colonnes à extraire (plante, caste, station, annee_determina$on, methode) à l’aide de l’argument 'col.' Il est possible de ne sélectionner qu’une colonne ou plusieurs, l’ordre n’ayant pas d’importance.
 
 Si une seule colonne est sélectionnée, la fonc$on s’écrit sous la forme extract(col = "plante").
 
@@ -60,12 +60,12 @@ Par défaut, si l’argument "col" n’est pas précisé, toutes les colonnes so
 
 Par défaut, toutes les observa$ons sont conservées et aucun tri n’est effectué.
   
-La fonction extract peut simplement s’écrire extract(), dans ce cas toutes les colonnes utiles des champs addi$onnels seront extraites et toutes les données de plantes seront gardées (même les observations NA ou les données ne renvoyant pas à un cd_nom dans TaxRef).
+La fonction extract peut simplement s’écrire extract(), dans ce cas toutes les colonnes utiles des champs additionnels seront extraites et toutes les données de plantes seront gardées (même les observations NA ou les données ne renvoyant pas à un cd_nom dans TaxRef).
 
 Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observa$ons
 
 ### Exemples
-- Extraction par défaut (toutes les colonnes des champs addi$onnels et sans mise en place d'un filtre sur la précision taxonomique)
+- Extraction par défaut (toutes les colonnes des champs additionnels et sans mise en place d'un filtre sur la précision taxonomique)
 
 extract()
 
@@ -89,7 +89,7 @@ Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké
 
 Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
 
-Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '~/Documents' ou '~/Downloads', comme pour la fonc$on 'import'.
+Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '/Documents' ou '/Downloads', comme pour la fonc$on 'import'.
 
 ### Exemples
 - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
