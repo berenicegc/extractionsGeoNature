@@ -1,13 +1,16 @@
 # Extractions GéoNature
 
-L'utilisation du package extrac$onsGeoNature nécessite l'installa$on de R et de RStudio : 
+L'utilisation du package extrac$onsGeoNature nécessite l'installation de R et de RStudio : 
+
 R : https://cran.rstudio.com/
+
 RStudio : https://posit.co/download/rstudio-desktop/
 
 Il est ensuite possible de créer une copie du script R déjà présent dans le dossier "~BDD/EXPORT_DONNEES/SCRIPT_EXPORT" et de le lancer.
 
 Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à par$r de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
 Après la décompression du fichier .zip, un script R doit être créé, sans oublier de charger le package :
+
 library(extractionsGeoNature)
 
 ## Import des fichiers nécessaires
@@ -49,7 +52,7 @@ La fonction extract permet d’extraire les colonnes d’intérêt, contenues da
 
 Si une seule colonne est sélectionnée, la fonc$on s’écrit sous la forme extract(col = "plante").
 
-Dans le cas où plusieurs colonnes sont sélectionnées, la fonction prend la forme extract(col = c("plante", "caste", "annee_determina$on")) par exemple, c() permettant de combiner des valeurs.
+Dans le cas où plusieurs colonnes sont sélectionnées, la fonction prend la forme extract(col = c("plante", "caste", "annee_determination")) par exemple, c() permettant de combiner des valeurs.
 
 Par défaut, si l’argument "col" n’est pas précisé, toutes les colonnes sont sélectionnées.
 
@@ -86,7 +89,7 @@ Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké
 
 Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
 
-Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme «~/Documents» ou «~/Downloads», comme pour la fonc$on 'import'.
+Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme '~/Documents' ou '~/Downloads', comme pour la fonc$on 'import'.
 
 ### Exemples
 - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
@@ -94,13 +97,13 @@ Il est également possible de changer le chemin d’accès à l’aide de l’ar
 export()
 
 
-- Export avec modifica$on du chemin d'accès
+- Export avec modification du chemin d'accès
 
 export(path = '~/Documents')
 
 export(path = '~/Downloads')
 
 
-- Export avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+- Export avec modification des noms de fichiers (les fichiers doivent être des .csv)
 
 export(fichier = "BDD_ABAURA.xlsx")
