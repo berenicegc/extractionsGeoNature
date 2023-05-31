@@ -6,7 +6,7 @@ RStudio : https://posit.co/download/rstudio-desktop/
 
 Il est ensuite possible de créer une copie du script R déjà présent dans le dossier "~BDD/EXPORT_DONNEES/SCRIPT_EXPORT" et de le lancer.
 
-Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à par$r de ce lien : https://github.com/berenicegc/extrac$onsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
+Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à par$r de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
 Après la décompression du fichier .zip, un script R doit être créé, sans oublier de charger le package :
 library(extractionsGeoNature)
 
