@@ -14,7 +14,7 @@ Après la décompression du fichier .zip, un script R doit être créé, sans ou
 library(extractionsGeoNature)
 
 ## Import des fichiers nécessaires
-La fonction import permet d’importer les fichiers nécessaires à l’extrac$on des données contenues dans les champs additionnels du fichier GéoNature. Deux fichiers sont nécessaires : la synthèse téléchargée sur la plateforme GéoNature et le fichier TaxRef.
+La fonction import permet d’importer les fichiers nécessaires à l’extraction des données contenues dans les champs additionnels du fichier GéoNature. Deux fichiers sont nécessaires : la synthèse téléchargée sur la plateforme GéoNature et le fichier TaxRef.
 
 ### Marche à suivre
 1. Télécharger la synthèse en .csv sur GeoNature
@@ -39,7 +39,7 @@ import(path = '~/Documents')
 import(path = '~/Downloads')
 
 
-- Import avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+- Import avec modification des noms de fichiers (les fichiers doivent être des .csv)
 
 import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv") 
 
@@ -48,9 +48,9 @@ import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv")
 La fonction extract permet d’extraire les colonnes d’intérêt, contenues dans les champs additionnels de la synthèse GéoNature. Les colonnes peuvent être : plante, caste, station, année de détermination et méthode de capture. Un tri des données de plantes pourra également être réalisé dans la fonction.
 
 ### Marche à suivre
-1. Sélectionner les colonnes à extraire (plante, caste, station, annee_determina$on, methode) à l’aide de l’argument 'col.' Il est possible de ne sélectionner qu’une colonne ou plusieurs, l’ordre n’ayant pas d’importance.
+1. Sélectionner les colonnes à extraire (plante, caste, station, annee_determination, methode) à l’aide de l’argument 'col.' Il est possible de ne sélectionner qu’une colonne ou plusieurs, l’ordre n’ayant pas d’importance.
 
-Si une seule colonne est sélectionnée, la fonc$on s’écrit sous la forme extract(col = "plante").
+Si une seule colonne est sélectionnée, la fonction s’écrit sous la forme extract(col = "plante").
 
 Dans le cas où plusieurs colonnes sont sélectionnées, la fonction prend la forme extract(col = c("plante", "caste", "annee_determination")) par exemple, c() permettant de combiner des valeurs.
 
@@ -58,11 +58,11 @@ Par défaut, si l’argument "col" n’est pas précisé, toutes les colonnes so
 
 2. Sélectionner le degré de précision taxonomique choisie ("famille", "genre" ou "sp") à l’aide de l’argument "precision_taxo". Si un rang taxonomique plus grossier est sélectionné (famille ou genre), les rangs plus précis seront conservés. Par exemple, si on autorise de conserver une précision allant jusqu’à la famille, les observations allant jusqu’au genre ou à l’espèce seront conservées.
 
-Par défaut, toutes les observa$ons sont conservées et aucun tri n’est effectué.
+Par défaut, toutes les observations sont conservées et aucun tri n’est effectué.
   
 La fonction extract peut simplement s’écrire extract(), dans ce cas toutes les colonnes utiles des champs additionnels seront extraites et toutes les données de plantes seront gardées (même les observations NA ou les données ne renvoyant pas à un cd_nom dans TaxRef).
 
-Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observa$ons
+Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observations
 
 ### Exemples
 - Extraction par défaut (toutes les colonnes des champs additionnels et sans mise en place d'un filtre sur la précision taxonomique)
