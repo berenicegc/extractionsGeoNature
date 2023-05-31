@@ -24,19 +24,19 @@ Si plusieurs synthèses GeoNature sont présentes dans le même dossier, c’est
 3. Préciser le nom des fichiers s’ils ont été changés avec les arguments 'geonature' et 'taxref'. Si les noms des fichiers n’ont pas été modifiés il n’est pas nécessaire de préciser ces arguments et les noms par défaut des fichiers téléchargés seront pris en compte. Attention, les noms de fichiers ne doivent pas contenir d'accents ou de caractères spéciaux. Le nom des fichiers peut être écrit avec ou sans l’extension (.csv), toutefois les fichiers doivent obligatoirement être des .csv (et non des .xls ou .xlsx). Si l’import ne marche pas, relancer la fonc$on peut fonctionner.
 
 ### Exemples
-Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+- Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
 
 import()
 
 
-Import avec modifica$on du chemin d'accès
+- Import avec modificayion du chemin d'accès
 
 import(path = '~/Documents')
 
 import(path = '~/Downloads')
 
 
-Import avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+- Import avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
 
 import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv") 
 
@@ -62,19 +62,19 @@ La fonction extract peut simplement s’écrire extract(), dans ce cas toutes le
 Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colonnes et pour une base de données d’environ 100 000 observa$ons
 
 ### Exemples
-Extraction par défaut (toutes les colonnes des champs addi$onnels et sans mise en place d'un filtre sur la précision taxonomique)
+- Extraction par défaut (toutes les colonnes des champs addi$onnels et sans mise en place d'un filtre sur la précision taxonomique)
 
 extract()
 
 
-Extraction avec sélection de colonnes
+- Extraction avec sélection de colonnes
 
 extract(col = "plante")
 
 extract(col = c("plante", "caste", "station", "annee_determination", "methode"))
 
 
-Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
+- Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
 
 extract(col = "plante", precision_taxo = "sp")
 
@@ -89,18 +89,18 @@ Il est possible de changer le nom du fichier à l’aide de l’argument 'fichie
 Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme «~/Documents» ou «~/Downloads», comme pour la fonc$on 'import'.
 
 ### Exemples
-Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+- Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
 
 export()
 
 
-Export avec modifica$on du chemin d'accès
+- Export avec modifica$on du chemin d'accès
 
 export(path = '~/Documents')
 
 export(path = '~/Downloads')
 
 
-Export avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+- Export avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
 
 export(fichier = "BDD_ABAURA.xlsx")
