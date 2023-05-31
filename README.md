@@ -15,7 +15,7 @@ La fonction import permet d’importer les fichiers nécessaires à l’extrac$o
 
 ### Marche à suivre
 1. Télécharger la synthèse en .csv sur GeoNature
-2. Mettre le csv dans le même dossier que le script R utilisé ou spécifier le dossier dans lequel les fichiers sont présents dans l’argument 'path', le chemin devant être sous la forme "~/Downloads». Dans tous les cas, le fichier synthese_observa$ons de GeoNature et TaxRef doivent être dans le même dossier.
+2. Mettre le csv dans le même dossier que le script R utilisé ou spécifier le dossier dans lequel les fichiers sont présents dans l’argument 'path', le chemin devant être sous la forme "~/Downloads". Dans tous les cas, le fichier synthese_observations de GeoNature et TaxRef doivent être dans le même dossier.
 
 Par défaut, si l’argument 'path' n’est pas précisé, les fichiers seront cherchés dans le même dossier que le script R.
 
@@ -25,18 +25,24 @@ Si plusieurs synthèses GeoNature sont présentes dans le même dossier, c’est
 
 ### Exemples
 Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+
 import()
 
+
 Import avec modifica$on du chemin d'accès
-import(path = "~/Documents")
-import(path = "~/Downloads")
+
+import(path = '~/Documents')
+
+import(path = '~/Downloads')
+
 
 Import avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+
 import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv") 
 
 ## Extraction des colonnes d'intérêt
 
-La fonction extract permet d’extraire les colonnes d’intérêt, contenues dans les champs additionnels de la synthèse GéoNature. Les colonnes peuvent être : plante, caste, sta$on, année de détermination et méthode de capture. Un tri des données de plantes pourra également être réalisé dans la fonction.
+La fonction extract permet d’extraire les colonnes d’intérêt, contenues dans les champs additionnels de la synthèse GéoNature. Les colonnes peuvent être : plante, caste, station, année de détermination et méthode de capture. Un tri des données de plantes pourra également être réalisé dans la fonction.
 
 ### Marche à suivre
 1. Sélectionner les colonnes à extraire (plante, caste, sta$on, annee_determina$on, methode) à l’aide de l’argument 'col.' Il est possible de ne sélectionner qu’une colonne ou plusieurs, l’ordre n’ayant pas d’importance.
@@ -57,13 +63,19 @@ Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colon
 
 ### Exemples
 Extraction par défaut (toutes les colonnes des champs addi$onnels et sans mise en place d'un filtre sur la précision taxonomique)
+
 extract()
 
+
 Extraction avec sélection de colonnes
+
 extract(col = "plante")
+
 extract(col = c("plante", "caste", "station", "annee_determination", "methode"))
 
+
 Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
+
 extract(col = "plante", precision_taxo = "sp")
 
 
@@ -78,11 +90,17 @@ Il est également possible de changer le chemin d’accès à l’aide de l’ar
 
 ### Exemples
 Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+
 export()
 
+
 Export avec modifica$on du chemin d'accès
-export(path = "~/Documents")
-export(path = "~/Downloads")
+
+export(path = '~/Documents')
+
+export(path = '~/Downloads')
+
 
 Export avec modifica$on des noms de fichiers (les fichiers doivent être des .csv)
+
 export(fichier = "BDD_ABAURA.xlsx")
