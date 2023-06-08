@@ -9,5 +9,4 @@ use_pipe()
 # Packages
 use_package("tidyverse", type = "depends")
 use_package("cli")
-use_package("openxlsx")
 
