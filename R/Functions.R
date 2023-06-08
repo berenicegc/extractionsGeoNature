@@ -501,7 +501,7 @@ extract <- function(col = c("plante", "caste", "station", "annee_determination",
 
 
 export <- function(path = ".", fichier = "export_final_GeoNature.xlsx"){
-  openxlsx::write.xlsx(x = export_final_GeoNature, file = paste0(path, "/export_final_GeoNature.xlsx"))
+  write.csv(x = export_final_GeoNature, file = paste0(path, "/", fichier))
 }
 
 
