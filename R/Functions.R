@@ -18,18 +18,22 @@
 #' @param geonature Nom du fichier de la synthèse téléchargée depuis GéoNature
 #' @param TaxRef Nom du fichier TaxRef
 #'
+#' @importFrom readr read_delim
 #' @importFrom cli cli_alert_danger
+#' @importFrom cli col_red
+#'
 #' @return La fonction importe les jeux de données
 #' @export
 #'
-#' @example Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+#' @examples
+#' - Import par défaut (fichiers non renommés et présents dans le même dossier que le script R)
 #' import()
 #'
-#' @example Import avec modification du chemin d'accès
+#' - Import avec modification du chemin d'accès
 #' import(path = "~/Documents")
 #' import(path = "~/Downloads")
 #'
-#' @example Import avec modification des noms de fichiers (les fichiers doivent être des .csv)
+#' - Import avec modification des noms de fichiers (les fichiers doivent être des .csv)
 #' import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv")
 
 import <- function(path = ".", geonature = "synthese_observations", TaxRef = "taxref"){
@@ -74,17 +78,42 @@ import <- function(path = ".", geonature = "synthese_observations", TaxRef = "ta
 #' @param col Colonnes à extraire des champs additionnels. Les colonnes peuvent être : "plante", "caste", "station", "annee_determination" et "methode".
 #' @param precision_taxo Précision taxonomique souhaitée pour la colonne plante ("famille", "genre" ou "sp").
 #'
+#' @importFrom stringr str_detect
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
+#' @importFrom stringr str_match
+#' @importFrom dplyr na_if
+#' @importFrom dplyr group_by
+#' @importFrom dplyr if_else
+#' @importFrom dplyr ungroup
+#' @importFrom Hmisc capitalize
+#' @importFrom stringr str_remove
+#' @importFrom dplyr case_when
+#' @importFrom dplyr filter
+#' @importFrom dplyr left_join
+#' @importFrom dplyr rename
+#' @importFrom dplyr full_join
+#' @importFrom dplyr arrange
+#' @importFrom dplyr filter_at
+#' @importFrom dplyr any_vars
+#' @importFrom dplyr vars
+#' @importFrom cli cli_alert_danger
+#' @importFrom cli col_red
+#' @importFrom stringr word
+#'
+#'
 #' @return La synthèse GéoNature complétée des colonnes sélectionnées
 #' @export
 #'
-#' @example Extraction par défaut (toutes les colonnes des champs additionnels et sans mise en place d'un filtre sur la précision taxonomique)
+#' @examples
+#' - Extraction par défaut (toutes les colonnes des champs additionnels et sans mise en place d'un filtre sur la précision taxonomique)
 #' extract()
 #'
-#' @example Extraction avec sélection de colonnes
+#' - Extraction avec sélection de colonnes
 #' extract(col = "plante")
 #' extract(col = c("plante", "caste", "station", "annee_determination", "methode"))
 #'
-#' @example Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
+#' - Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
 #' extract(col = "plante", precision_taxo = "sp")
 
 
@@ -478,29 +507,32 @@ extract <- function(col = c("plante", "caste", "station", "annee_determination",
 #'
 #' @description La fonction 'export' permet d’exporter la base de données finale, contenant les variables sélectionnées.
 #'
-#' @details Par défaut, le fichier est appelé "export_final_GeoNature.xlsx" et est stocké au même endroit que le script R.
-#' Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .xlsx (par exemple : fichier.xlsx).
+#' @details Par défaut, le fichier est appelé "export_final_GeoNature.csv" et est stocké au même endroit que le script R.
+#' Il est possible de changer le nom du fichier à l’aide de l’argument 'fichier', en spécifiant l’extension .csv (par exemple : fichier.csv).
 #' Il est également possible de changer le chemin d’accès à l’aide de l’argument 'path', qui doit être sous la forme «~/Documents» ou «~/Downloads», comme pour la fonction 'import'.
 #'
 #' @param path Le chemin permettant d'accéder aux fichiers
 #' @param fichier Nom du fichier enregistré
 #'
+#' @importFrom utils write.csv
+#'
 #' @return La synthèse GéoNature finale contenant les colonnes sélectionnées par l'utilisateur
 #' @export
 #'
-#' @example Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
+#' @examples
+#' - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
 #' export()
 #'
-#' @example Export avec modification du chemin d'accès
+#' - Export avec modification du chemin d'accès
 #' export(path = "~/Documents")
 #' export(path = "~/Downloads")
 #'
-#' @example Export avec modification des noms de fichiers (les fichiers doivent être des .csv)
+#' - Export avec modification des noms de fichiers (les fichiers doivent être des .csv)
 #' export(fichier = "BDD_ABAURA.xlsx")
 
 
 
-export <- function(path = ".", fichier = "export_final_GeoNature.xlsx"){
+export <- function(path = ".", fichier = "export_final_GeoNature.csv"){
   write.csv(x = export_final_GeoNature, file = paste0(path, "/", fichier))
 }
 
