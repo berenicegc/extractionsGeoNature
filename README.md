@@ -6,12 +6,16 @@ R : https://cran.rstudio.com/
 
 RStudio : https://posit.co/download/rstudio-desktop/
 
-Il est ensuite possible de créer une copie du script R déjà présent dans le dossier "~BDD/EXPORT_DONNEES/SCRIPT_EXPORT" et de le lancer.
+Il est ensuite possible d’utiliser le script R déjà présent dans le dossier "~BDD/EXPORT_DONNEES/SCRIPT_EXPORT" ou de créer une copie dans son propre dossier de travail.
 
-Si le NAS n'est pas accessible, il est possible de télécharger une archive .zip du package à partir de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur "< > Code" puis sur "Download ZIP".
-Après la décompression du fichier .zip, un script R doit être créé, sans oublier de charger le package :
+Si le NAS n'est pas accessible, il est possible de télécharger le package à partir de ce lien : https://github.com/berenicegc/extractionsGeoNature, en cliquant sur le fichier « extractionsGeoNature_0.0.0.9000.tar.gz » puis en cliquant sur l’icône de téléchargement. 
+
+Après le téléchargement, un script R doit être créé, sans oublier d’installer et de charger le package : 
+
+install.packages("/Volumes/BDD/EXPORT_DONNEES/SCRIPT_EXPORT/extractionsGeoNature_0.0.0.9000.tar.gz", repos = NULL, type = "source")
 
 library(extractionsGeoNature)
+
 
 ## Import des fichiers nécessaires
 La fonction import permet d’importer les fichiers nécessaires à l’extraction des données contenues dans les champs additionnels du fichier GéoNature. Deux fichiers sont nécessaires : la synthèse téléchargée sur la plateforme GéoNature et le fichier TaxRef.
