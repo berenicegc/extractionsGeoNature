@@ -12,10 +12,11 @@ Si le NAS n'est pas accessible, il est possible de télécharger le package à p
 
 Après le téléchargement, un script R doit être créé, sans oublier d’installer et de charger le package : 
 
+```
 install.packages("/Volumes/BDD/EXPORT_DONNEES/SCRIPT_EXPORT/extractionsGeoNature_0.0.0.9000.tar.gz", repos = NULL, type = "source")
 
 library(extractionsGeoNature)
-
+```
 
 ## Import des fichiers nécessaires
 La fonction import permet d’importer les fichiers nécessaires à l’extraction des données contenues dans les champs additionnels du fichier GéoNature. Deux fichiers sont nécessaires : la synthèse téléchargée sur la plateforme GéoNature et le fichier TaxRef.
@@ -37,15 +38,16 @@ import()
 
 
 - Import avec modification du chemin d'accès
-
+```
 import(path = '~/Documents')
 
 import(path = '~/Downloads')
-
+```
 
 - Import avec modification des noms de fichiers (les fichiers doivent être des .csv)
-
+```
 import(geonature = "BDD_ABAURA.csv", TaxRef = "TaxRefv16.csv") 
+```
 
 ## Extraction des colonnes d'intérêt
 
@@ -70,21 +72,21 @@ Il faut compter environ 2 minutes d’a<ente pour l’export de toutes les colon
 
 ### Exemples
 - Extraction par défaut (toutes les colonnes des champs additionnels et sans mise en place d'un filtre sur la précision taxonomique)
-
+```
 extract()
-
+```
 
 - Extraction avec sélection de colonnes
-
+```
 extract(col = "plante")
 
 extract(col = c("plante", "caste", "station", "annee_determination", "methode"))
-
+```
 
 - Extraction avec filtre par précision taxonomique (la colonne 'plante' doit obligatoirement être sélectionnée pour préciser cet argument)
-
+```
 extract(col = "plante", precision_taxo = "sp")
-
+```
 
 ## Export du fichier final
 La fonction 'export' permet d’exporter la base de données finale, contenant les variables sélectionnées.
@@ -97,17 +99,18 @@ Il est également possible de changer le chemin d’accès à l’aide de l’ar
 
 ### Exemples
 - Export par défaut (fichiers non renommés et présents dans le même dossier que le script R)
-
+```
 export()
-
+```
 
 - Export avec modification du chemin d'accès
-
+```
 export(path = '~/Documents')
 
 export(path = '~/Downloads')
-
+```
 
 - Export avec modification des noms de fichiers (les fichiers doivent être des .csv)
-
+```
 export(fichier = "BDD_ABAURA.xlsx")
+```
